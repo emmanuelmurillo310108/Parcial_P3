@@ -1,30 +1,30 @@
 defmodule Datos do
 
-def confeccionistas do
-  [
-    %{codigo: "C01", nombre: "Emmanuel Murillo", alquiler: true},
-    %{codigo: "C02", nombre: "Sebastián Salinas", alquiler: false},
-    %{codigo: "C03", nombre: "Miguel Carabalí", alquiler: false},
-    %{codigo: "C04", nombre: "Pedro Mosquera", alquiler: true},
-    %{codigo: "C05", nombre: "Marco Asensio", alquiler: false},
-    %{codigo: "C06", nombre: "Luna Jaramillo", alquiler: true},
-    %{codigo: "C07", nombre: "Maria Sinisterra", alquiler: true},
-    %{codigo: "C08", nombre: "Nora Montañez", alquiler: true},
-    %{codigo: "C09", nombre: "Gabriela Castaño", alquiler: false},
-    %{codigo: "C10", nombre: "Juan Torres", alquiler: false}
-  ]
-end
+  def confeccionistas do
+    [
+      %{codigo: "C01", nombre: "Emmanuel Murillo", alquiler: true},
+      %{codigo: "C02", nombre: "Sebastián Salinas", alquiler: false},
+      %{codigo: "C03", nombre: "Miguel Carabalí", alquiler: false},
+      %{codigo: "C04", nombre: "Pedro Mosquera", alquiler: true},
+      %{codigo: "C05", nombre: "Marco Asensio", alquiler: false},
+      %{codigo: "C06", nombre: "Luna Jaramillo", alquiler: true},
+      %{codigo: "C07", nombre: "Maria Sinisterra", alquiler: true},
+      %{codigo: "C08", nombre: "Nora Montañez", alquiler: true},
+      %{codigo: "C09", nombre: "Gabriela Castaño", alquiler: false},
+      %{codigo: "C10", nombre: "Juan Torres", alquiler: false}
+    ]
+  end
 
-def lineas do
-  [
-    %{id: "L1", nombre: "Línea Norte", puestos: 6},
-    %{id: "L2", nombre: "Línea Central", puestos: 4},
-    %{id: "L3", nombre: "Línea Este", puestos: 3},
-    %{id: "L4", nombre: "Línea Oeste", puestos: 5}
-  ]
-end
+  def lineas do
+    [
+      %{id: "L1", nombre: "Línea Norte", puestos: 6},
+      %{id: "L2", nombre: "Línea Central", puestos: 4},
+      %{id: "L3", nombre: "Línea Este", puestos: 3},
+      %{id: "L4", nombre: "Línea Oeste", puestos: 5}
+    ]
+  end
 
-def lotes do
+  def lotes do
     [
       # Día 1
       %{confeccionista: "C01", linea: "L1", dia: 1, prendas: 70, defectos: 1.5},
