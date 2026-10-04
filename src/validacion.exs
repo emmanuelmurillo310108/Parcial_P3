@@ -4,7 +4,7 @@ defmodule Validacion do
   """
 
   @doc """
-  Validar si existe el confeccionista mediante su código
+  Método para validar si existe el confeccionista mediante su código
   """
   defp validar_confeccionista(codigo, confeccionistas) do
     if Enum.any?(confeccionistas, fn c -> c.codigo == codigo end) do
@@ -15,7 +15,7 @@ defmodule Validacion do
   end
 
   @doc """
-  Validar si existe la línea mediante su número de id
+  Método para validar si existe la línea mediante su número de id
   """
   defp validar_linea(id, lineas) do
     if Enum.any?(lineas, fn l -> l.id == id end) do
@@ -26,7 +26,7 @@ defmodule Validacion do
   end
 
   @doc """
-  Validar si el día está dentro de los parámetros establecidos
+  Método para validar si el día está dentro de los parámetros establecidos
   """
   defp validar_dia(dia) do
     cond do
@@ -38,7 +38,7 @@ defmodule Validacion do
   end
 
   @doc """
-  Validar si el número de prendas está dentro del rango
+  Método para validar si el número de prendas está dentro del rango
   """
   defp validar_prendas(prendas) do
     cond do
@@ -49,6 +49,9 @@ defmodule Validacion do
     end
   end
 
+  @doc """
+  Método para validar si el porcentaje de defectos está dentro del rango
+  """
   defp validar_porcentaje_defectos(defectos) do
     cond do
       not is_number(defectos) -> {:error, :porcentaje_invalido}
@@ -59,7 +62,7 @@ defmodule Validacion do
   end
 
   @doc """
-  Validar el lote aplicando las 5 reglas establecidas
+  Método para validar el lote aplicando las 5 reglas establecidas
   """
   def validar_lote(lote, confeccionistas, lineas) do
     with {:ok, _} <- validar_confeccionista(lote.confeccionista, confeccionistas),
