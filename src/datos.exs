@@ -1,5 +1,11 @@
 defmodule Datos do
+  @moduledoc """
+  Módulo con los datos de prueba del taller
+  """
 
+  @doc """
+  Método que retorna la lista de confeccionistas registrados
+  """
   def confeccionistas do
     [
       %{codigo: "C01", nombre: "Emmanuel Murillo", alquiler: true},
@@ -15,6 +21,9 @@ defmodule Datos do
     ]
   end
 
+  @doc """
+  Método que retorna las lineas de produccion disponibles
+  """
   def lineas do
     [
       %{id: "L1", nombre: "Línea Norte", puestos: 6},
@@ -24,9 +33,12 @@ defmodule Datos do
     ]
   end
 
+  @doc """
+  Método que retorna los lotes de produccion validos e invalidos usados como datos de prueba
+  """
   def lotes do
     [
-      # Día 1
+      # dia 1
       %{confeccionista: "C01", linea: "L1", dia: 1, prendas: 70, defectos: 1.5},
       %{confeccionista: "C01", linea: "L2", dia: 1, prendas: 55, defectos: 7.0},
       %{confeccionista: "C02", linea: "L1", dia: 1, prendas: 130, defectos: 1.8},
@@ -43,7 +55,7 @@ defmodule Datos do
       %{confeccionista: "C07", linea: "L2", dia: 1, prendas: 60, defectos: 4.2},
       %{confeccionista: "C09", linea: "L3", dia: 1, prendas: 80, defectos: 2.5},
 
-      # Día 2
+      # dia 2
       %{confeccionista: "C01", linea: "L1", dia: 2, prendas: 90, defectos: 12.0},
       %{confeccionista: "C02", linea: "L2", dia: 2, prendas: 65, defectos: 1.0},
       %{confeccionista: "C02", linea: "L3", dia: 2, prendas: 60, defectos: 1.5},
@@ -60,7 +72,7 @@ defmodule Datos do
       %{confeccionista: "C06", linea: "L1", dia: 2, prendas: 30, defectos: 0.0},
       %{confeccionista: "C10", linea: "L2", dia: 2, prendas: 25, defectos: 1.5},
 
-      # Día 3
+      # dia 3
       %{confeccionista: "C01", linea: "L2", dia: 3, prendas: 110, defectos: 4.5},
       %{confeccionista: "C02", linea: "L3", dia: 3, prendas: 70, defectos: 1.0},
       %{confeccionista: "C03", linea: "L4", dia: 3, prendas: 85, defectos: 5.0},
@@ -77,7 +89,7 @@ defmodule Datos do
       %{confeccionista: "C08", linea: "L3", dia: 3, prendas: 65, defectos: 2.5},
       %{confeccionista: "C10", linea: "L4", dia: 3, prendas: 80, defectos: 0.5},
 
-      # Día 4
+      # dia 4
       %{confeccionista: "C01", linea: "L3", dia: 4, prendas: 80, defectos: 1.8},
       %{confeccionista: "C02", linea: "L4", dia: 4, prendas: 95, defectos: 2.5},
       %{confeccionista: "C03", linea: "L1", dia: 4, prendas: 60, defectos: 7.5},
@@ -94,7 +106,7 @@ defmodule Datos do
       %{confeccionista: "C08", linea: "L3", dia: 4, prendas: 70, defectos: 1.0},
       %{confeccionista: "C09", linea: "L1", dia: 4, prendas: 60, defectos: 3.5},
 
-      # Día 5
+      # dia 5
       %{confeccionista: "C01", linea: "L4", dia: 5, prendas: 140, defectos: 2.0},
       %{confeccionista: "C02", linea: "L1", dia: 5, prendas: 80, defectos: 5.0},
       %{confeccionista: "C03", linea: "L2", dia: 5, prendas: 95, defectos: 1.5},
@@ -111,7 +123,7 @@ defmodule Datos do
       %{confeccionista: "C08", linea: "L1", dia: 5, prendas: 80, defectos: 0.5},
       %{confeccionista: "C09", linea: "L2", dia: 5, prendas: 40, defectos: 2.5},
 
-      # Día 6
+      # dia 6
       %{confeccionista: "C01", linea: "L1", dia: 6, prendas: 60, defectos: 4.0},
       %{confeccionista: "C02", linea: "L2", dia: 6, prendas: 75, defectos: 1.5},
       %{confeccionista: "C03", linea: "L3", dia: 6, prendas: 100, defectos: 2.5},
@@ -120,23 +132,23 @@ defmodule Datos do
 
       # Lotes inválidos (2 por cada motivo)
 
-      # 1. :confeccionista_desconocido
+      # :confeccionista_desconocido
       %{confeccionista: "C99", linea: "L1", dia: 1, prendas: 70, defectos: 1.5},
       %{confeccionista: "X01", linea: "L2", dia: 2, prendas: 50, defectos: 2.0},
 
-      # 2. :linea_desconocida
+      # :linea_desconocida
       %{confeccionista: "C01", linea: "L9", dia: 3, prendas: 60, defectos: 1.0},
       %{confeccionista: "C02", linea: "L5", dia: 4, prendas: 80, defectos: 4.5},
 
-      # 3. :dia_invalido
+      # :dia_invalido
       %{confeccionista: "C03", linea: "L1", dia: 7, prendas: 90, defectos: 2.5},
       %{confeccionista: "C04", linea: "L2", dia: 0, prendas: 55, defectos: 1.2},
 
-      # 4. :prendas_fuera_de_rango
+      # :prendas_fuera_de_rango
       %{confeccionista: "C05", linea: "L3", dia: 5, prendas: 0, defectos: 3.0},
       %{confeccionista: "C06", linea: "L4", dia: 6, prendas: 185, defectos: 1.5},
 
-      # 5. :porcentaje_invalido
+      # :porcentaje_invalido
       %{confeccionista: "C07", linea: "L1", dia: 1, prendas: 50, defectos: -1.5},
       %{confeccionista: "C08", linea: "L2", dia: 2, prendas: 70, defectos: 105.0}
     ]

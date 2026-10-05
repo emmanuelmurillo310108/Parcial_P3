@@ -2,7 +2,7 @@ defmodule Validacion do
   @moduledoc """
   Módulo que se encarga de validar los lotes de producción según las reglas del negocio
   """
-
+  
   @doc """
   Método para validar si existe el confeccionista mediante su código
   """
